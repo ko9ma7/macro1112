@@ -1,0 +1,11 @@
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\bin\Debug\macro_app.exe
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\bin\Debug\macro_app.exe.config
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\bin\Debug\macro_app.pdb
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro app.csproj.AssemblyReference.cache
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro app.csproj.SuggestedBindingRedirects.cache
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro_app.Form1.resources
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro_app.Properties.Resources.resources
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro app.csproj.GenerateResource.cache
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro app.csproj.CoreCompileInputs.cache
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro_app.exe
+C:\Users\GIGABYTE\RiderProjects\macro app\macro app\obj\Debug\macro_app.pdb
