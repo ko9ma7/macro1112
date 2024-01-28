@@ -66,10 +66,6 @@ namespace macro_app
                 // Check if the left mouse button is clicked
                 if ((GetAsyncKeyState(0x02) & 0x8000) != 0)
                 {
-                    // Get the current cursor position
-                    GetCursorPos(out point);
-                    Console.WriteLine("Mouse clicked at X: {0}, Y: {1}", point.X, point.Y);
-
                     // Simulate pressing keys '1' through '7' simultaneously
                     SimulateKeyPress(0x31); // '1'
                     SimulateKeyPress(0x32); // '2'
