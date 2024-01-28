@@ -12,26 +12,17 @@ namespace macro_app
 
         const int KEYEVENTF_EXTENDEDKEY = 0x0001;
         const int KEYEVENTF_KEYUP = 0x0002;
-        
-        [DllImport("user32.dll")]
-        public static extern bool GetCursorPos(out POINT lpPoint);
 
         [DllImport("user32.dll")]
         public static extern short GetAsyncKeyState(int vKey);
 
-        [StructLayout(LayoutKind.Sequential)]
-        public struct POINT
-        {
-            public int X;
-            public int Y;
-        }
-        
         static void SimulateKeyPress(byte keyCode)
         {
             keybd_event(keyCode, 0, KEYEVENTF_EXTENDEDKEY, UIntPtr.Zero);
         }
 
         public static bool isEnabled = false;
+        public static bool isPaused = false;
         
         public Form1()
         {
@@ -59,17 +50,16 @@ namespace macro_app
 
         static async void input_Listener()
         {
-            POINT point;
+            var R = 0x52;
 
             while (isEnabled)
             {
-                // Check if the left mouse button is clicked
-                if ((GetAsyncKeyState(0x02) & 0x8000) != 0)
+                // Pause listener if needed
+                pause_listener();
+                
+                // Check if the mouse button is clicked
+                if (((GetAsyncKeyState(R) & 0x8000) != 0) && !isPaused)
                 {
-                    // Get the current cursor position
-                    GetCursorPos(out point);
-                    Console.WriteLine("Mouse clicked at X: {0}, Y: {1}", point.X, point.Y);
-
                     // Simulate pressing keys '1' through '7' simultaneously
                     SimulateKeyPress(0x31); // '1'
                     SimulateKeyPress(0x32); // '2'
@@ -81,10 +71,22 @@ namespace macro_app
                 }
 
                 // change the loop speed, otherwise one click might invoke the function multiple times at once
-                await Task.Delay(75);
+                await Task.Delay(100);
             }
         }
-        
+
+        // press scroll wheel to pause
+        static void pause_listener()
+        {
+            var ScrollWheelClick = 0x04;
+                
+            if ((GetAsyncKeyState(ScrollWheelClick) & 0x8000) != 0)
+            {
+                // Pause/Unpause the macro
+                isPaused = !isPaused;
+            }
+        }
+
     }
 
 }

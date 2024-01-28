@@ -37,11 +37,11 @@
             // 
             this.button1.AccessibleDescription = "";
             this.button1.AccessibleName = "";
-            this.button1.Location = new System.Drawing.Point(161, 92);
+            this.button1.Location = new System.Drawing.Point(97, 95);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 23);
+            this.button1.Size = new System.Drawing.Size(221, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "start\r\n\r\n";
+            this.button1.Text = "start\r\n\r\n\r\n\r\n";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
